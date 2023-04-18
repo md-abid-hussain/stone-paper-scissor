@@ -47,6 +47,8 @@ const game = () => {
     for (let i = 0; i < 5; i++) {
         console.log(`round ${i}`);
         let userChoice = getUserChoice();
+        if (!userChoice)
+            break;
         let computerChoice = getComputerChoice();
         let result = playRound(userChoice, computerChoice);
         if (result === 1) {
