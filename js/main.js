@@ -58,15 +58,18 @@ const game = () => {
         }
     }
 
-    console.log(`Your score ${userWin}`);
-    console.log(`Computer score ${computerWin}`);
+    const score = `Your score ${userWin} 
+        Computer score ${computerWin}`;
 
     if (userWin > computerWin)
-        console.log('You won');
+        alert(`You won
+        ${score}`);
     else if (userWin < computerWin)
-        console.log('You lost');
+        alert(`You lost
+        ${score}`);
     else
-        console.log('It\'s a tie');
+        alert(`It\'s a tie
+        ${score}`);
 }
 
 game();
