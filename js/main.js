@@ -39,20 +39,16 @@ const game = () => {
         console.log(`round ${i}`);
         let userChoice = prompt('Enter stone, paper or scissor');
         let computerChoice = getComputerChoice();
-        console.log(userChoice);
-        console.log(computerChoice);
-        console.log('result');
         let result = playRound(userChoice, computerChoice);
         if (result === 1) {
             userWin++;
-            console.log('you won')
         } else if (result === -1) {
             computerWin++;
-            console.log('dance')
-        } else {
-            console.log(`tie`);
         }
     }
+
+    console.log(`Your score ${userWin}`);
+    console.log(`Computer score ${computerWin}`);
 
     if (userWin > computerWin)
         console.log('You won');
