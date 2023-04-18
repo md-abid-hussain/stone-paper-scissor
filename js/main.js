@@ -5,6 +5,15 @@ const game = () => {
         return choices[Math.floor(Math.random() * 3)];
     }
 
+    const getUserChoice = () => {
+        let choice = prompt('Enter stone, paper or scissor');
+        if (choice) {
+            return choice.trim().toLowerCase();
+        } else {
+            console.log(`Let\'s play later`);
+        }
+    }
+
     const playRound = (userSelection, computerSelection) => {
         if (userSelection === 'stone') {
             if (computerSelection === 'paper') {
@@ -37,7 +46,7 @@ const game = () => {
     let userWin = 0;
     for (let i = 0; i < 5; i++) {
         console.log(`round ${i}`);
-        let userChoice = prompt('Enter stone, paper or scissor');
+        let userChoice = getUserChoice();
         let computerChoice = getComputerChoice();
         let result = playRound(userChoice, computerChoice);
         if (result === 1) {
